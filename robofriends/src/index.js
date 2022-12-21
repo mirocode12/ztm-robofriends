@@ -1,18 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './input.css';
-import Card from './Card';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./input.css";
+import Card from "./Card";
+import { robots } from "./robots";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
     <div>
-    <Card />
-    <Card />
-    <Card />
+      {robots.map((user, i) => {
+        return (<Card
+          id={robots[i].id}
+          name={robots[i].name}
+          username={robots[i].username}
+          email={robots[i].email}
+        />
+      )})}
     </div>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
