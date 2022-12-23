@@ -1,0 +1,24 @@
+
+@font-face {
+    font-family: 'GRUNGER';
+    font-style: normal;
+    font-weight: normal;
+    src: local('GRUNGER'), url('Grunger.ttf');
+}
+@font-face {
+    font-family: 'SEGA LOGO FONT';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SEGA LOGO FONT'), url('SEGA.woff');
+}
+
+
+
+h1 {
+    font-family: 'SEGA LOGO FONT';
+    font-size: 36px;
+}
+
+.username{
+    font-family: 'GRUNGER';
+}
