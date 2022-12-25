@@ -3,13 +3,13 @@
     font-family: 'GRUNGER';
     font-style: normal;
     font-weight: normal;
-    src: local('GRUNGER'), url('Grunger.ttf');
+    src: local('GRUNGER'), url('../Grunger.ttf');
 }
 @font-face {
     font-family: 'SEGA LOGO FONT';
     font-style: normal;
     font-weight: normal;
-    src: local('SEGA LOGO FONT'), url('SEGA.woff');
+    src: local('SEGA LOGO FONT'), url('../SEGA.woff');
 }
 
 
