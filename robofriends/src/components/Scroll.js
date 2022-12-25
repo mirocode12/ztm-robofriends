@@ -2,7 +2,7 @@ import React from "react";
 
 const Scroll = (props) => {
     return (
-        <div className="overflow-scroll h-screen scroll">
+        <div className="overflow-scroll scroll rounded-sm h-screen">
             {props.children}
         </div>
     )

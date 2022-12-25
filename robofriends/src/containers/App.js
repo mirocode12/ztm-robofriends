@@ -35,7 +35,7 @@ class App extends Component {
         <h1 className="text-neutral-700">ROBOFRIENDS</h1>
         <SearchBox searchChange={this.onSearchChange} />
         <Scroll>
-          <CardList classList="inline-block" robots={filteredRobots} />
+          <CardList className="inline-block" robots={filteredRobots} />
         </Scroll>
       </div>
     );

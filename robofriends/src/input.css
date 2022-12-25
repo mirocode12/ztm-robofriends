@@ -22,4 +22,6 @@ code {
     monospace;
 }
 .scroll::-webkit-scrollbar { display: none !important }
-.scroll { overflow: -moz-scrollbars-none; }
+.scroll { overflow: -moz-scrollbars-none; 
+  border: solid 3px rgb(152, 148, 148);
+         }
