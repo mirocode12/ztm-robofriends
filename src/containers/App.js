@@ -23,6 +23,10 @@ class App extends Component {
     this.setState({ searchfield: event.target.value });
   };
 
+  onShowUser = (event) => {
+    console.log(event.target.parentNode.getAttribute("name"));
+  };
+
   render() {
     const { robots, searchfield } = this.state;
     const filteredRobots = robots.filter((robot) => {
@@ -35,7 +39,7 @@ class App extends Component {
         <h1 className="text-neutral-700">ROBOFRIENDS</h1>
         <SearchBox searchChange={this.onSearchChange} />
         <Scroll>
-          <CardList className="inline-block" robots={filteredRobots} />
+          <CardList showUser={this.onShowUser} className="inline-block" robots={filteredRobots} />
         </Scroll>
       </div>
     );
