@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import CardList from "../components/CardList";
-import SearchBox from "../components/SearchBox";
-import Scroll from "../components/Scroll";
 import "../containers/App.css";
+import Home from "../components/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import InfoRobots from "../components/InfoRobots";
 
 class App extends Component {
   constructor() {
@@ -23,25 +23,32 @@ class App extends Component {
     this.setState({ searchfield: event.target.value });
   };
 
-   onCardClick = (cardId) => {
-    console.log(cardId);
-  };
-
   render() {
     const { robots, searchfield } = this.state;
     const filteredRobots = robots.filter((robot) => {
       return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     });
-    return !robots.length ? 
-      <h1 className="text-center">LOADING</h1>
-     : (
-      <div className="text-center">
-        <h1 className="text-neutral-700">ROBOFRIENDS</h1>
-        <SearchBox searchChange={this.onSearchChange} />
-        <Scroll>
-          <CardList onCardClick={this.onCardClick} className="inline-block" robots={filteredRobots} />
-        </Scroll>
-      </div>
+    return (
+      <Router>
+        <div className="text-center">
+          <h1 className="text-neutral-700">ROBOFRIENDS</h1>{" "}
+        </div>
+        <Routes>
+          <Route
+            path="/ztm-robofriends"
+            element={
+              <Home
+                searchChange={this.onSearchChange}
+                robots={filteredRobots}
+              />
+            }
+          />
+          <Route
+            path="/ztm-robofriends/inforobot"
+            element={<InfoRobots robot />}
+          />
+        </Routes>
+      </Router>
     );
   }
 }
