@@ -30,7 +30,7 @@ class App extends Component {
       return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     });
     return (
-      <div className="lg:w-3/5 md:w-4/5 m-auto">
+      <div className="w-4/5 m-auto">
       <Router>
         <div className="text-center">
           <h1 id="title" className="text-neutral-700">ROBOFRIENDS</h1>{" "}
