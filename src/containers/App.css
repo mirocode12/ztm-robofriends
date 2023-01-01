@@ -14,11 +14,11 @@
 
 
 
-h1 {
+#title {
     font-family: 'SEGA LOGO FONT';
     font-size: 36px;
 }
 
-.username{
+.username, h1{
     font-family: 'GRUNGER';
 }

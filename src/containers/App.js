@@ -3,6 +3,7 @@ import "../containers/App.css";
 import Home from "../components/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import InfoRobots from "../components/InfoRobots";
+import RobotPosts from "../components/RobotPosts";
 
 class App extends Component {
   constructor() {
@@ -29,9 +30,10 @@ class App extends Component {
       return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     });
     return (
+      <div className="lg:w-3/5 md:w-4/5 m-auto">
       <Router>
         <div className="text-center">
-          <h1 className="text-neutral-700">ROBOFRIENDS</h1>{" "}
+          <h1 id="title" className="text-neutral-700">ROBOFRIENDS</h1>{" "}
         </div>
         <Routes>
           <Route
@@ -46,9 +48,12 @@ class App extends Component {
           <Route
             path="/ztm-robofriends/inforobot"
             element={<InfoRobots robot />}
-          />
+          >
+          </Route>
+          <Route path="/ztm-robofriends/posts" element={<RobotPosts />} />
         </Routes>
       </Router>
+      </div>
     );
   }
 }

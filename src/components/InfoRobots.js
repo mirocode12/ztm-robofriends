@@ -1,11 +1,13 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./InfoRobots.css";
 
 const InfoRobots = () => {
   const location = useLocation();
   const { robotInfo } = location.state;
-  console.log(robotInfo)
+  if(robotInfo === "null"){
+    console.log("NUUUUUUUUUUULLLLLLLLLLLLLLL")
+  }
   return (
     <div>
       <div className="text-center">
@@ -18,13 +20,19 @@ const InfoRobots = () => {
           alt="robot"
           src={`https://robohash.org/${robotInfo.id}?100x100`}
         />
-         <div className="robot-info">
-            <h3>Username: {robotInfo.username}</h3>
-            <h3>Email: {robotInfo.email}</h3>
-            <h3>Phone: {robotInfo.phone}</h3>
-            <h3>Website: {robotInfo.website}</h3>
-            <button id="btn-posts" type="button">Posts</button>
-         </div>
+        <div className="robot-info">
+          <h3>Username: {robotInfo.username}</h3>
+          <h3>Email: {robotInfo.email}</h3>
+          <h3>Phone: {robotInfo.phone}</h3>
+          <h3>Website: {robotInfo.website}</h3>
+          <Link to="/ztm-robofriends/posts"  state={{robotInfo}}>
+            {
+              <button id="btn-posts" type="button">
+                Posts
+              </button>
+            }
+          </Link>
+        </div>
       </div>
     </div>
   );
