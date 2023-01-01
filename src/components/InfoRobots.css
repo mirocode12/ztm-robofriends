@@ -1,0 +1,44 @@
+.borderLine {
+  height: 3px;
+  background-color: rgb(217, 213, 213);
+  border-radius: 50%;
+  animation-name: animate;
+  max-width: 92%;
+  animation-duration: 800ms;
+  animation-delay: 1s;
+  margin: 0 auto;
+}
+.info-name {
+    font-family: 'GRUNGER';
+    color: rgb(52, 56, 59);
+}
+.info-img {
+    max-width: 65%;
+    margin: 10px auto;
+}
+.robot-info{
+    width: 65%;
+    margin: 10px auto;
+}
+#btn-posts{
+    padding: 2px 25px;
+    color: aliceblue;
+    letter-spacing: 1.5px;
+    border: solid 1px rgb(37 99 235);
+    background-color: rgb(37 99 235);
+    border-radius: 10%;
+    transition: background-color 150ms ease-in-out;
+}
+#btn-posts:hover{
+    background-color:aliceblue;
+    color: rgb(37 99 235);
+}
+
+@keyframes animate {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 93%;
+  }
+}
