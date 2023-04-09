@@ -5,9 +5,6 @@ import "./InfoRobots.css";
 const InfoRobots = () => {
   const location = useLocation();
   const { robotInfo } = location.state;
-  if(robotInfo === "null"){
-    console.log("NUUUUUUUUUUULLLLLLLLLLLLLLL")
-  }
   return (
     <div>
       <div className="text-center">
@@ -25,7 +22,7 @@ const InfoRobots = () => {
           <h3>Email: {robotInfo.email}</h3>
           <h3>Phone: {robotInfo.phone}</h3>
           <h3>Website: {robotInfo.website}</h3>
-          <Link to="/ztm-robofriends/posts"  state={{robotInfo}}>
+          <Link to="/ztm-robofriends/posts/" state = {{ robotInfo }}>
             {
               <button id="btn-posts" type="button">
                 Posts

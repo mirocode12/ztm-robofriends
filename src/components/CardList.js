@@ -5,7 +5,7 @@ const CardList = ({ robots }) => {
   return (
     <div className="inline-block text-center">
       {robots.map((user, i) => {
-        return <Card key={i} robotInfo={robots[i]} />;
+        return <Card key={i} robotInfo={user} />;
       })}
     </div>
   );

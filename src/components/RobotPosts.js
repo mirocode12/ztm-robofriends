@@ -1,20 +1,36 @@
-import React, { useState, useEffect }from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import Post from "./Post";
 
 const RobotPosts = () => {
-  const [posts, setPosts] = useState(null);
+  const location = useLocation();
+  const { robotInfo } = location.state;
+  const [posts, setPosts] = useState();
+
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts/2")
-      .then((response) => response.json())
-      .then((post) => {
-        setPosts(post);
-      });
+    fetchData();
   }, []);
-  console.log(posts)
-  return (
+
+  const fetchData = () => {
+    fetch(
+      `https://jsonplaceholder.typicode.com/comments?postId=${robotInfo.id}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setPosts(data);
+      });
+  };
+
+  return posts ? (
     <div>
-      <h1 className="text-center">Robot posts</h1>
+      <h1 className="text-center">{robotInfo.name} posts</h1>
       <div className="borderLine"></div>
+      {posts.map((post, i) => {
+        return <Post key={i} robotPost={post} />;
+      })}
     </div>
+  ) : (
+    <h1 className="flex justify-center items-center h-screen">Loading Posts</h1>
   );
 };
 

@@ -4,9 +4,7 @@ import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
 
 const Home = ({ robots, searchChange }) => {
-  return !robots.length ? (
-    <h1 className="text-center">LOADING</h1>
-  ) : (
+  return (
     <div className="text-center">
       <SearchBox searchChange={searchChange} />
       <Scroll>

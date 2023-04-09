@@ -23,5 +23,5 @@ code {
 }
 .scroll::-webkit-scrollbar { display: none !important }
 .scroll { overflow: -moz-scrollbars-none; 
-  border: solid 3px rgb(152, 148, 148);
+  border: solid 1px rgb(152, 148, 148);
          }

@@ -50,7 +50,7 @@ class App extends Component {
             element={<InfoRobots robot />}
           >
           </Route>
-          <Route path="/ztm-robofriends/posts" element={<RobotPosts />} />
+          <Route path="/ztm-robofriends/posts"  element={<RobotPosts robot />} />
         </Routes>
       </Router>
       </div>
